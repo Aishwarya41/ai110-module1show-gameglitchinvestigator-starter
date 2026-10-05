@@ -18,7 +18,7 @@ Document at least 3 bugs you found. Add rows as needed.
 |-------|----------------------|-----------------|------------------------|
 |   50  | Go higher            | Go lower        |No error, but wrong hint|
 |  1500 |Guess is out of range | Go higher       |Not checking for valid input|
-|New Game|Text box clears      |Text box does not clear |                 |
+|Level hard|Higher range than normal|Half the range of normal|                 |
 |New Game|Start a new game     |New game does not start if the previous game ended on a win or if the user ran out of attempts| |
 
 ---
