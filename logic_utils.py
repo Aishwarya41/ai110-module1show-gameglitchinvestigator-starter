@@ -11,6 +11,8 @@ def parse_guess(raw: str):
     """
     raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
 
+#FIX: Refactored check_guess logic into logic_utils.py using agent mode
+#FIX: Fixed the hint issue that was backwards.
 
 def check_guess(guess, secret):
     """
@@ -18,7 +20,21 @@ def check_guess(guess, secret):
 
     outcome examples: "Win", "Too High", "Too Low"
     """
-    raise NotImplementedError("Refactor this function from app.py into logic_utils.py")
+    if guess == secret:
+        return "Win", "🎉 Correct!"
+
+    try:
+        if guess > secret:
+            return "Too High", "📉 Go LOWER!"
+        return "Too Low", "📈 Go HIGHER!"
+    except TypeError:
+        # Mixed types (e.g. int guess vs str secret): compare numerically, not as strings
+        g, s = int(guess), int(secret)
+        if g == s:
+            return "Win", "🎉 Correct!"
+        if g > s:
+            return "Too High", "📉 Go LOWER!"
+        return "Too Low", "📈 Go HIGHER!"
 
 
 def update_score(current_score: int, outcome: str, attempt_number: int):
