@@ -31,6 +31,7 @@ Claude
 The AI suggested that the he messages and their emojis are reversed, so they had to be reversed. This was correct, and I verified it by asking AI to write tests and running them, and also manually checking it on the game itself.
 
 - Give one example of an AI suggestion you did not accept as written (including what the AI suggested, why you rejected or changed it, and how you verified your version). It does not have to be a suggestion that was wrong: over-engineered, out of scope, harder to read, or a poor fit for this codebase all count.
+The AI suggested that I change the 'Normal' level to a 'Medium', but I thought the current Easy, Normal, Hard levels worked fine, so I rejected its suggestions.
 
 ---
 
@@ -40,19 +41,27 @@ The AI suggested that the he messages and their emojis are reversed, so they had
 I asked AI to add test cases to verify that the expected behavior was achieved, and also manually tested it in the game.
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
+I gave very an input that was out of the current level's range, and it displayed a message showing what the expected range was.
 - Did AI help you design or understand any tests? How?
+Yes, AI helped me write tests in the test_game_logic.py file and write assert statements to check different edge cases. I asked it to add the tests, but also the explain the tests that were added.
+
 
 ---
 
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+Streamlit "reruns" means that it re-runs your entire Python script from the first line to the last, unlike in most apps, where the code sits there and waits for events. A session state is a notebook that persists between reruns for one user's browser session.
 
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
+I want to keep writing tests as well as manually verifying any code changes made by AI.
+
 - What is one thing you would do differently next time you work with AI on a coding task?
+I was making changes to multiple files for different bugs, which made it difficult to track specific changes in GitHub. I will be more mindful of commiting to git for each change that I make.
+
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+I used to think that I need to use AI as less as possible and write code by hand for it to be good and reliable, but I was able to see how efficient I can be with AI assistnce, while still keeping the code reliable through tests and validation.
